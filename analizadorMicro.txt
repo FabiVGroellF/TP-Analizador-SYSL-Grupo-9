@@ -1,0 +1,5 @@
+definiciones
+%%
+reglas
+%%
+código del usuario
