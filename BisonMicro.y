@@ -43,6 +43,8 @@ operadorAditivo: SUMA
 %%
 
 int main() {
+printf("Bienvenido al analizador de codigo Micro!\n");
+
 yyparse();
 }
 void yyerror (char *s){

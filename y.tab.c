@@ -68,7 +68,8 @@
 /* Copy the first part of user declarations.  */
 
 /* Line 189 of yacc.c  */
-#line 1 "bisonBasico.y"
+#line 1 "BisonMicro.y"
+
 
 #include <stdio.h>
 #include <stdlib.h> 
@@ -80,8 +81,9 @@ extern void yyerror(char*);
 int variable=0;
 
 
+
 /* Line 189 of yacc.c  */
-#line 85 "y.tab.c"
+#line 87 "y.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -136,7 +138,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 11 "bisonBasico.y"
+#line 14 "BisonMicro.y"
 
    char* cadena;
    int num;
@@ -144,7 +146,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 148 "y.tab.c"
+#line 150 "y.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -156,7 +158,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 160 "y.tab.c"
+#line 162 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -442,8 +444,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    19,    19,    20,    22,    22,    24,    25,    27,    28,
-      29,    31,    32
+       0,    24,    24,    25,    28,    28,    31,    32,    35,    36,
+      37,    40,    41
 };
 #endif
 
@@ -1349,21 +1351,21 @@ yyreduce:
         case 4:
 
 /* Line 1455 of yacc.c  */
-#line 22 "bisonBasico.y"
+#line 28 "BisonMicro.y"
     {printf("LA LONG es: %d",yyleng);if(yyleng>4) yyerror("metiste la pata");}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 28 "bisonBasico.y"
+#line 36 "BisonMicro.y"
     {printf("valores %d %d",atoi(yytext),(yyvsp[(1) - (1)].num)); }
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1367 "y.tab.c"
+#line 1369 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1575,14 +1577,18 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 34 "bisonBasico.y"
+#line 43 "BisonMicro.y"
+
 
 int main() {
+printf("Bienvenido al analizador de codigo Micro!\n");
+
 yyparse();
 }
 void yyerror (char *s){
 printf ("mi error personalizado es %s\n",s);
 }
+
 int yywrap()  {
   return 1;  
-} 
+}

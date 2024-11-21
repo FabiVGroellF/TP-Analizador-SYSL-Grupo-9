@@ -364,9 +364,9 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "flexbasico.l"
+#line 1 "FlexMicro.l"
 #define INITIAL 0
-#line 2 "flexbasico.l"
+#line 2 "FlexMicro.l"
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include "y.tab.h"
@@ -521,7 +521,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 13 "flexbasico.l"
+#line 13 "FlexMicro.l"
 
 #line 527 "lex.yy.c"
 
@@ -608,47 +608,47 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "flexbasico.l"
+#line 14 "FlexMicro.l"
 {return ASIGNACION;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "flexbasico.l"
+#line 15 "FlexMicro.l"
 {yylval.num=atoi(yytext);return CONSTANTE;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "flexbasico.l"
+#line 16 "FlexMicro.l"
 {return ID;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "flexbasico.l"
+#line 17 "FlexMicro.l"
 {return PYCOMA;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "flexbasico.l"
+#line 18 "FlexMicro.l"
 {return PARENIZQUIERDO;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "flexbasico.l"
+#line 19 "FlexMicro.l"
 {return PARENDERECHO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 20 "flexbasico.l"
+#line 20 "FlexMicro.l"
 {return SUMA;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 21 "flexbasico.l"
+#line 21 "FlexMicro.l"
 {return RESTA;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 22 "flexbasico.l"
+#line 22 "FlexMicro.l"
 ECHO;
 	YY_BREAK
 #line 655 "lex.yy.c"
@@ -1537,4 +1537,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 22 "flexbasico.l"
+#line 22 "FlexMicro.l"
