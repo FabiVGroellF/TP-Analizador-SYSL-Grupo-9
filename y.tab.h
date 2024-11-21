@@ -46,7 +46,11 @@
      PARENIZQUIERDO = 262,
      PARENDERECHO = 263,
      ID = 264,
-     CONSTANTE = 265
+     INICIO = 265,
+     FIN = 266,
+     LEER = 267,
+     ESCRIBIR = 268,
+     CONSTANTE = 269
    };
 #endif
 /* Tokens.  */
@@ -57,7 +61,11 @@
 #define PARENIZQUIERDO 262
 #define PARENDERECHO 263
 #define ID 264
-#define CONSTANTE 265
+#define INICIO 265
+#define FIN 266
+#define LEER 267
+#define ESCRIBIR 268
+#define CONSTANTE 269
 
 
 
@@ -67,7 +75,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 14 "BisonMicro.y"
+#line 16 "BisonMicro.y"
 
    char* cadena;
    int num;
@@ -75,7 +83,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 79 "y.tab.h"
+#line 87 "y.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

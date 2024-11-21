@@ -8,6 +8,7 @@ extern int yyleng;
 extern int yylex(void);
 extern void yyerror(char*);
 extern FILE *yyin;
+FILE *archivo;
 int variable=0;
 
 %}
@@ -18,7 +19,7 @@ int variable=0;
 } 
 
 %token ASIGNACION PYCOMA SUMA RESTA PARENIZQUIERDO PARENDERECHO
-%token <cadena> ID
+%token <cadena> ID INICIO FIN LEER ESCRIBIR
 %token <num> CONSTANTE
 %%
 
@@ -43,9 +44,9 @@ operadorAditivo: SUMA
 ;
 %%
 
-int main(int argc, char **argv) {  /
+int main(int argc, char **argv) {
 if (argc < 2) {
-printf("Falta el nombre del archivo a analizar. Debe escribir el comando asi: %s <archivo_con_codigo_en_micro>\n", argv[0]);
+printf("Falta el nombre del archivo a analizar. Debe escribir el comando asi: ./analizador <archivo_con_codigo_en_micro>\n");
 return 1;
 }
 
@@ -62,7 +63,7 @@ printf("Bienvenido al analizador de codigo Micro!\n");
 if (yyparse() == 0) {
 printf("Felicidades! Tu codigo Micro esta correcto!\n");
 } else {
-printf("Oh no! Tu codigo Micro tiene errores!\n");
+printf("\nOh no! Tu codigo Micro tiene errores!");
 }
 
 fclose(archivo);

@@ -521,9 +521,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 13 "FlexMicro.l"
+#line 20 "FlexMicro.l"
 
-#line 527 "lex.yy.c"
+
+#line 528 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -608,50 +609,50 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 14 "FlexMicro.l"
+#line 22 "FlexMicro.l"
 {return ASIGNACION;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 15 "FlexMicro.l"
-{yylval.num=atoi(yytext);return CONSTANTE;}
+#line 23 "FlexMicro.l"
+{yylval.num=atoi(yytext); return CONSTANTE;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "FlexMicro.l"
+#line 24 "FlexMicro.l"
 {return ID;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "FlexMicro.l"
+#line 25 "FlexMicro.l"
 {return PYCOMA;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 18 "FlexMicro.l"
+#line 26 "FlexMicro.l"
 {return PARENIZQUIERDO;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "FlexMicro.l"
+#line 27 "FlexMicro.l"
 {return PARENDERECHO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 20 "FlexMicro.l"
+#line 28 "FlexMicro.l"
 {return SUMA;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 21 "FlexMicro.l"
+#line 29 "FlexMicro.l"
 {return RESTA;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 22 "FlexMicro.l"
+#line 31 "FlexMicro.l"
 ECHO;
 	YY_BREAK
-#line 655 "lex.yy.c"
+#line 656 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1537,4 +1538,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 22 "FlexMicro.l"
+#line 31 "FlexMicro.l"
