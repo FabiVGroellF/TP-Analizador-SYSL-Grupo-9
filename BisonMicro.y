@@ -18,16 +18,32 @@ int variable=0;
    int num;
 } 
 
-%token ASIGNACION PYCOMA SUMA RESTA PARENIZQUIERDO PARENDERECHO
-%token <cadena> ID INICIO FIN LEER ESCRIBIR
+%token ASIGNACION PYCOMA COMA SUMA RESTA PARENIZQUIERDO PARENDERECHO INICIO FIN LEER ESCRIBIR FDT
+%token <cadena> ID
 %token <num> CONSTANTE
 %%
 
-sentencias: sentencias sentencia 
+objetivo: programa FDT
+;
+
+programa: INICIO listaSentencias FIN
+;
+
+listaSentencias: listaSentencias sentencia 
 |sentencia
 ;
 
-sentencia: ID {printf("LA LONG es: %d",yyleng); if(yyleng>4) yyerror("metiste la pata");} ASIGNACION expresion PYCOMA
+sentencia: ID {if(yyleng>32) yyerror("tu identificador tiene mas de 32 caracteres");} ASIGNACION expresion PYCOMA {printf("Se hizo la asignacion");}
+|LEER PARENIZQUIERDO listaIdentificadores PARENDERECHO PYCOMA
+|ESCRIBIR PARENIZQUIERDO listaExpresiones PARENDERECHO PYCOMA
+;
+
+listaIdentificadores: listaIdentificadores COMA ID
+|ID
+;
+
+listaExpresiones: listaExpresiones COMA ID
+|ID
 ;
 
 expresion: primaria 
@@ -35,7 +51,7 @@ expresion: primaria
 ; 
 
 primaria: ID
-|CONSTANTE {printf("valores %d %d",atoi(yytext),$1); }
+|CONSTANTE
 |PARENIZQUIERDO expresion PARENDERECHO
 ;
 
@@ -71,7 +87,7 @@ return 0;
 }
 
 void yyerror (char *s){
-printf ("mi error personalizado es %s\n",s);
+printf ("Ha ocurrido un error: %s\n",s);
 }
 
 int yywrap()  {

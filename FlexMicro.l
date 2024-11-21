@@ -16,6 +16,7 @@ inicio {return INICIO;}
 fin {return FIN;}
 leer {return LEER;}
 escribir {return ESCRIBIR;}
+FDT {return FDT;}
 
 %%
 
@@ -23,9 +24,11 @@ escribir {return ESCRIBIR;}
 {constEntera} {yylval.num=atoi(yytext); return CONSTANTE;}
 {IDENTIFICADOR} {return ID;}
 ";" {return PYCOMA;}
+"," {return COMA;}
 "(" {return PARENIZQUIERDO;}
 ")" {return PARENDERECHO;}
 "+" {return SUMA;}
 "-" {return RESTA;}
+<<EOF>> {return FDT;}
 
 %%

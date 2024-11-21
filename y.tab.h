@@ -41,31 +41,35 @@
    enum yytokentype {
      ASIGNACION = 258,
      PYCOMA = 259,
-     SUMA = 260,
-     RESTA = 261,
-     PARENIZQUIERDO = 262,
-     PARENDERECHO = 263,
-     ID = 264,
+     COMA = 260,
+     SUMA = 261,
+     RESTA = 262,
+     PARENIZQUIERDO = 263,
+     PARENDERECHO = 264,
      INICIO = 265,
      FIN = 266,
      LEER = 267,
      ESCRIBIR = 268,
-     CONSTANTE = 269
+     FDT = 269,
+     ID = 270,
+     CONSTANTE = 271
    };
 #endif
 /* Tokens.  */
 #define ASIGNACION 258
 #define PYCOMA 259
-#define SUMA 260
-#define RESTA 261
-#define PARENIZQUIERDO 262
-#define PARENDERECHO 263
-#define ID 264
+#define COMA 260
+#define SUMA 261
+#define RESTA 262
+#define PARENIZQUIERDO 263
+#define PARENDERECHO 264
 #define INICIO 265
 #define FIN 266
 #define LEER 267
 #define ESCRIBIR 268
-#define CONSTANTE 269
+#define FDT 269
+#define ID 270
+#define CONSTANTE 271
 
 
 
@@ -83,7 +87,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 87 "y.tab.h"
+#line 91 "y.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
