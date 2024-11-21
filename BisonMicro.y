@@ -7,6 +7,7 @@ extern char *yytext;
 extern int yyleng;
 extern int yylex(void);
 extern void yyerror(char*);
+extern FILE *yyin;
 int variable=0;
 
 %}
@@ -25,7 +26,7 @@ sentencias: sentencias sentencia
 |sentencia
 ;
 
-sentencia: ID {printf("LA LONG es: %d",yyleng);if(yyleng>4) yyerror("metiste la pata");} ASIGNACION expresion PYCOMA
+sentencia: ID {printf("LA LONG es: %d",yyleng); if(yyleng>4) yyerror("metiste la pata");} ASIGNACION expresion PYCOMA
 ;
 
 expresion: primaria 
@@ -42,11 +43,32 @@ operadorAditivo: SUMA
 ;
 %%
 
-int main() {
+int main(int argc, char **argv) {  /
+if (argc < 2) {
+printf("Falta el nombre del archivo a analizar. Debe escribir el comando asi: %s <archivo_con_codigo_en_micro>\n", argv[0]);
+return 1;
+}
+
+FILE *archivo = fopen(argv[1], "r"); 
+if (!archivo) {
+printf("Error al abrir el archivo");
+return 1;
+}
+
+yyin = archivo;
+
 printf("Bienvenido al analizador de codigo Micro!\n");
 
-yyparse();
+if (yyparse() == 0) {
+printf("Felicidades! Tu codigo Micro esta correcto!\n");
+} else {
+printf("Oh no! Tu codigo Micro tiene errores!\n");
 }
+
+fclose(archivo);
+return 0;
+}
+
 void yyerror (char *s){
 printf ("mi error personalizado es %s\n",s);
 }
