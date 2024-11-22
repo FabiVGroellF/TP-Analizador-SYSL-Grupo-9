@@ -18,16 +18,10 @@ int variable=0;
    int num;
 } 
 
-%token ASIGNACION PYCOMA COMA SUMA RESTA PARENIZQUIERDO PARENDERECHO INICIO FIN LEER ESCRIBIR FDT
+%token ASIGNACION PYCOMA COMA SUMA RESTA PARENIZQUIERDO PARENDERECHO INICIO FIN LEER ESCRIBIR
 %token <cadena> ID
 %token <num> CONSTANTE
 %%
-
-objetivo: programa FDT
-;
-
-programa: INICIO listaSentencias FIN
-;
 
 listaSentencias: listaSentencias sentencia 
 |sentencia
@@ -75,7 +69,6 @@ return 1;
 yyin = archivo;
 
 printf("Bienvenido al analizador de codigo Micro!\n");
-
 if (yyparse() == 0) {
 printf("Felicidades! Tu codigo Micro esta correcto!\n");
 } else {

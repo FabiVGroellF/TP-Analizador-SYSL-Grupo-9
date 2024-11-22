@@ -50,9 +50,8 @@
      FIN = 266,
      LEER = 267,
      ESCRIBIR = 268,
-     FDT = 269,
-     ID = 270,
-     CONSTANTE = 271
+     ID = 269,
+     CONSTANTE = 270
    };
 #endif
 /* Tokens.  */
@@ -67,9 +66,8 @@
 #define FIN 266
 #define LEER 267
 #define ESCRIBIR 268
-#define FDT 269
-#define ID 270
-#define CONSTANTE 271
+#define ID 269
+#define CONSTANTE 270
 
 
 
@@ -87,7 +85,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 91 "y.tab.h"
+#line 89 "y.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
