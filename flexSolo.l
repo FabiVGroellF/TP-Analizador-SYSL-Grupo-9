@@ -37,6 +37,10 @@ ESCRIBIR			"escribir"
 
 {IDENTIFICADOR}		printf( "Un operador de identificador: %s de longitud %d\n", yytext, yyleng );
 
+"\n"
+"\t"
+" "
+
 yyerror("No se pudo reconocer el token");
 
 %%
@@ -55,9 +59,7 @@ return 1;
 yyin = archivo;
 
 printf("Bienvenido al analizador lexico de codigo Micro!\n");
-while (!yywrap) {
 yylex();
-}
 printf("Felicidades! Tu codigo Micro no tiene errores lexicos!\n");
 
 
