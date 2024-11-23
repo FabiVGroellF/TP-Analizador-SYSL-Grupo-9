@@ -388,7 +388,10 @@ char *yytext;
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include "y.tab.h"
-#line 392 "lex.yy.c"
+	
+	extern int flag_de_error;
+	
+#line 395 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -539,10 +542,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 16 "flexMicro.l"
+#line 19 "flexMicro.l"
 
 
-#line 546 "lex.yy.c"
+#line 549 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -627,89 +630,89 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 18 "flexMicro.l"
+#line 21 "flexMicro.l"
 {return ASIGNACION;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 19 "flexMicro.l"
+#line 22 "flexMicro.l"
 {return PYCOMA;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 20 "flexMicro.l"
+#line 23 "flexMicro.l"
 {return COMA;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 21 "flexMicro.l"
+#line 24 "flexMicro.l"
 {return PARENIZQUIERDO;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 22 "flexMicro.l"
+#line 25 "flexMicro.l"
 {return PARENDERECHO;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 23 "flexMicro.l"
+#line 26 "flexMicro.l"
 {return SUMA;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 24 "flexMicro.l"
+#line 27 "flexMicro.l"
 {return RESTA;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 26 "flexMicro.l"
+#line 29 "flexMicro.l"
 {yylval.num=atoi(yytext); return CONSTANTE;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 28 "flexMicro.l"
+#line 31 "flexMicro.l"
 {return INICIO;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 29 "flexMicro.l"
+#line 32 "flexMicro.l"
 {return FIN;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 30 "flexMicro.l"
+#line 33 "flexMicro.l"
 {return LEER;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 31 "flexMicro.l"
+#line 34 "flexMicro.l"
 {return ESCRIBIR;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 33 "flexMicro.l"
+#line 36 "flexMicro.l"
 {return ID;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 35 "flexMicro.l"
+#line 38 "flexMicro.l"
 
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 36 "flexMicro.l"
+#line 39 "flexMicro.l"
 {return 0; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 37 "flexMicro.l"
-{ printf("Caracter No Reconocido: %s terminando... \n", yytext); exit(1);}
+#line 40 "flexMicro.l"
+{ printf("Caracter No Reconocido: %s \n", yytext); flag_de_error = 1;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 39 "flexMicro.l"
+#line 42 "flexMicro.l"
 ECHO;
 	YY_BREAK
-#line 713 "lex.yy.c"
+#line 716 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1593,4 +1596,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 39 "flexMicro.l"
+#line 42 "flexMicro.l"

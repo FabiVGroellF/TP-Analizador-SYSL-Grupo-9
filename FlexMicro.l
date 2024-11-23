@@ -2,6 +2,9 @@
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include "y.tab.h"
+	
+	extern int flag_de_error;
+	
 %}
 
 DIGITO 				[0-9]
@@ -34,6 +37,6 @@ ESCRIBIR			"escribir"
 
 [ \t\n]
 <<EOF>>             {return 0; }
-.                   { printf("Caracter No Reconocido: %s terminando... \n", yytext); exit(1);}
+.                   { printf("Caracter No Reconocido: %s \n", yytext); flag_de_error = 1;}
 
 %%

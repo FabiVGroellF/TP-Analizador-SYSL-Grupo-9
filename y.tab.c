@@ -81,7 +81,7 @@ extern void yyerror(char*);
 extern FILE *yyin;
 FILE *archivo;
 int variable=0;
-
+int flag_de_error = 0;
 #define YYDEBUG 1
 
 
@@ -1377,14 +1377,7 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-        case 2:
-
-/* Line 1455 of yacc.c  */
-#line 28 "bisonMicro.y"
-    { printf("Programa completo.\n"); }
-    break;
-
-  case 5:
+        case 5:
 
 /* Line 1455 of yacc.c  */
 #line 35 "bisonMicro.y"
@@ -1395,13 +1388,13 @@ yyreduce:
 
 /* Line 1455 of yacc.c  */
 #line 35 "bisonMicro.y"
-    {printf("Se hizo la asignacion \n");}
+    {printf("Asignacion correcta! \n");}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1405 "y.tab.c"
+#line 1398 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1632,8 +1625,8 @@ return 1;
 yyin = archivo;
 
 printf("Bienvenido al analizador de codigo Micro!\n");
-if (yyparse() == 0) {
-printf("Felicidades! Tu codigo Micro esta correcto!\n");
+if (yyparse() == 0 && flag_de_error == 0) {
+printf("Felicidades! Tu codigo Micro es correcto!\n");
 } else {
 printf("\nOh no! Tu codigo Micro tiene errores!");
 }

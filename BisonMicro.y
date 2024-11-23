@@ -10,7 +10,7 @@ extern void yyerror(char*);
 extern FILE *yyin;
 FILE *archivo;
 int variable=0;
-
+int flag_de_error = 0;
 #define YYDEBUG 1
 
 %}
@@ -25,14 +25,14 @@ int variable=0;
 %token <num> CONSTANTE
 %%
 
-programa: INICIO listaSentencias FIN { printf("Programa completo.\n"); }
+programa: INICIO listaSentencias FIN
 ;
 
 listaSentencias: listaSentencias sentencia 
 |sentencia
 ;
 
-sentencia: ID {if(yyleng>32) yyerror("tu identificador tiene mas de 32 caracteres");} ASIGNACION expresion PYCOMA {printf("Se hizo la asignacion \n");}
+sentencia: ID {if(yyleng>32) yyerror("tu identificador tiene mas de 32 caracteres");} ASIGNACION expresion PYCOMA {printf("Asignacion correcta! \n");}
 |LEER PARENIZQUIERDO listaIdentificadores PARENDERECHO PYCOMA
 |ESCRIBIR PARENIZQUIERDO listaExpresiones PARENDERECHO PYCOMA
 ;
@@ -75,8 +75,8 @@ return 1;
 yyin = archivo;
 
 printf("Bienvenido al analizador de codigo Micro!\n");
-if (yyparse() == 0) {
-printf("Felicidades! Tu codigo Micro esta correcto!\n");
+if (yyparse() == 0 && flag_de_error == 0) {
+printf("Felicidades! Tu codigo Micro es correcto!\n");
 } else {
 printf("\nOh no! Tu codigo Micro tiene errores!");
 }
