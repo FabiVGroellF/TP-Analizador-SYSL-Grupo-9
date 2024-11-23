@@ -282,36 +282,32 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 15
-#define YY_END_OF_BUFFER 16
-static yyconst short int yy_accept[76] =
+#define YY_NUM_RULES 16
+#define YY_END_OF_BUFFER 17
+static yyconst short int yy_accept[41] =
     {   0,
-        0,    0,   16,   15,    4,    5,    6,    3,    7,    8,
-       15,    2,   13,   13,   13,   13,   13,   13,    8,    1,
-       13,   13,   13,   13,   13,   13,   13,   10,   13,   13,
-       13,   13,   13,   11,   13,   13,   13,   13,   13,    9,
-       13,   13,   13,   12,   13,   13,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,   14,    0
+        0,    0,   17,   15,   14,   14,    4,    5,    6,    3,
+        7,    8,   15,    2,   13,   13,   13,   13,   13,    8,
+        1,   13,   13,   13,   13,   13,   10,   13,   13,   13,
+       13,   13,   11,   13,   13,    9,   13,   13,   12,    0
     } ;
 
 static yyconst int yy_ec[256] =
     {   0,
+        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    1,    1,    1,    1,    1,    1,    3,
-        4,    1,    5,    6,    7,    1,    1,    8,    8,    8,
-        8,    8,    8,    8,    8,    8,    8,    9,   10,    1,
-       11,    1,    1,    1,   12,   12,   12,   12,   12,   12,
-       12,   12,   12,   12,   12,   12,   12,   13,   12,   12,
-       12,   12,   12,   12,   12,   12,   12,   12,   12,   12,
-        1,    1,    1,    1,    1,    1,   12,   14,   15,   16,
+        1,    2,    1,    1,    1,    1,    1,    1,    1,    4,
+        5,    1,    6,    7,    8,    1,    1,    9,    9,    9,
+        9,    9,    9,    9,    9,    9,    9,   10,   11,    1,
+       12,    1,    1,    1,   13,   13,   14,   13,   13,   15,
+       13,   13,   16,   13,   13,   13,   13,   17,   18,   13,
+       13,   13,   13,   13,   13,   13,   13,   13,   13,   13,
+        1,    1,    1,    1,    1,    1,   13,   19,   20,   13,
 
-       17,   18,   12,   12,   19,   12,   20,   21,   12,   22,
-       23,   24,   12,   25,   26,   27,   28,   12,   12,   12,
-       29,   12,    1,    1,    1,    1,    1,    1,    1,    1,
+       21,   13,   13,   13,   22,   13,   13,   23,   13,   13,
+       13,   13,   13,   24,   25,   13,   13,   13,   13,   13,
+       13,   13,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -328,69 +324,53 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[30] =
+static yyconst int yy_meta[26] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    2,    1,    1,
-        1,    2,    2,    2,    2,    2,    2,    2,    2,    2,
-        2,    2,    2,    2,    2,    2,    2,    2,    2
+        1,    1,    1,    1,    1,    1,    1,    1,    2,    1,
+        1,    1,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    2
     } ;
 
-static yyconst short int yy_base[77] =
+static yyconst short int yy_base[42] =
     {   0,
-        0,    0,   87,   88,   88,   88,   88,   88,   88,   78,
-       74,   88,    0,   58,   64,   60,   64,   51,   71,   88,
-        0,   63,   55,   57,   58,   57,   48,    0,   57,   46,
-       45,   50,   49,    0,   42,   52,   42,   41,   44,    0,
-       37,   36,   47,    0,   36,   56,   31,   39,   53,   30,
-       25,   36,   28,   48,   24,   31,   32,   23,   23,   21,
-       28,   25,   16,   38,   22,   17,   35,    9,   12,   14,
-       16,   10,   21,   88,   88,   28
+        0,    0,   47,   48,   48,   48,   48,   48,   48,   48,
+       48,   37,   33,   48,    0,   28,   26,   17,   20,   31,
+       48,    0,   22,   22,   17,   15,    0,   21,   10,    9,
+       16,    9,    0,   12,   10,    0,    6,    3,    0,   48,
+       24
     } ;
 
-static yyconst short int yy_def[77] =
+static yyconst short int yy_def[42] =
     {   0,
-       75,    1,   75,   75,   75,   75,   75,   75,   75,   75,
-       75,   75,   76,   76,   76,   76,   76,   76,   75,   75,
-       76,   76,   76,   76,   76,   76,   76,   76,   76,   76,
-       76,   76,   76,   76,   76,   76,   76,   76,   76,   76,
-       76,   76,   76,   76,   76,   76,   75,   75,   75,   75,
-       75,   75,   75,   75,   75,   75,   75,   75,   75,   75,
-       75,   75,   75,   75,   75,   75,   75,   75,   75,   75,
-       75,   75,   75,   75,    0,   75
+       40,    1,   40,   40,   40,   40,   40,   40,   40,   40,
+       40,   40,   40,   40,   41,   41,   41,   41,   41,   40,
+       40,   41,   41,   41,   41,   41,   41,   41,   41,   41,
+       41,   41,   41,   41,   41,   41,   41,   41,   41,    0,
+       40
     } ;
 
-static yyconst short int yy_nxt[118] =
+static yyconst short int yy_nxt[74] =
     {   0,
-        4,    4,    5,    6,    7,    8,    9,   10,   11,   12,
-        4,   13,   13,   13,   13,   13,   14,   15,   16,   13,
-       17,   13,   13,   13,   13,   13,   13,   13,   18,   21,
-       74,   73,   72,   71,   70,   69,   68,   67,   66,   65,
-       64,   63,   62,   61,   60,   59,   58,   57,   56,   55,
-       54,   53,   52,   51,   50,   49,   48,   47,   46,   45,
-       44,   43,   42,   41,   40,   39,   38,   37,   36,   35,
-       34,   33,   32,   31,   30,   29,   28,   27,   19,   26,
-       25,   24,   23,   22,   20,   19,   75,    3,   75,   75,
-       75,   75,   75,   75,   75,   75,   75,   75,   75,   75,
-
-       75,   75,   75,   75,   75,   75,   75,   75,   75,   75,
-       75,   75,   75,   75,   75,   75,   75
+        4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
+       14,    4,   15,   15,   16,   17,   15,   15,   15,   15,
+       18,   15,   19,   15,   15,   22,   39,   38,   37,   36,
+       35,   34,   33,   32,   31,   30,   29,   28,   27,   20,
+       26,   25,   24,   23,   21,   20,   40,    3,   40,   40,
+       40,   40,   40,   40,   40,   40,   40,   40,   40,   40,
+       40,   40,   40,   40,   40,   40,   40,   40,   40,   40,
+       40,   40,   40
     } ;
 
-static yyconst short int yy_chk[118] =
+static yyconst short int yy_chk[74] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,   76,
-       73,   72,   71,   70,   69,   68,   67,   66,   65,   64,
-       63,   62,   61,   60,   59,   58,   57,   56,   55,   54,
-       53,   52,   51,   50,   49,   48,   47,   46,   45,   43,
-       42,   41,   39,   38,   37,   36,   35,   33,   32,   31,
-       30,   29,   27,   26,   25,   24,   23,   22,   19,   18,
-       17,   16,   15,   14,   11,   10,    3,   75,   75,   75,
-       75,   75,   75,   75,   75,   75,   75,   75,   75,   75,
-
-       75,   75,   75,   75,   75,   75,   75,   75,   75,   75,
-       75,   75,   75,   75,   75,   75,   75
+        1,    1,    1,    1,    1,   41,   38,   37,   35,   34,
+       32,   31,   30,   29,   28,   26,   25,   24,   23,   20,
+       19,   18,   17,   16,   13,   12,    3,   40,   40,   40,
+       40,   40,   40,   40,   40,   40,   40,   40,   40,   40,
+       40,   40,   40,   40,   40,   40,   40,   40,   40,   40,
+       40,   40,   40
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -404,18 +384,13 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "flexSolo.l"
+#line 1 "flexMicro.l"
 #define INITIAL 0
-#line 2 "flexSolo.l"
+#line 2 "flexMicro.l"
 	#include <stdio.h>
 	#include <stdlib.h>
-    extern FILE *yyin;
-    FILE *archivo;
-	
-#ifndef yywrap
-    static int yywrap(void) { return 1;}
-#endif
-#line 419 "lex.yy.c"
+	#include "y.tab.h"
+#line 394 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -566,10 +541,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 21 "flexSolo.l"
+#line 16 "flexMicro.l"
 
 
-#line 573 "lex.yy.c"
+#line 548 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -620,13 +595,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 76 )
+				if ( yy_current_state >= 41 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 88 );
+		while ( yy_base[yy_current_state] != 48 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -654,82 +629,89 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 23 "flexSolo.l"
-printf( "Un operador de asignacion: %s\n", yytext);
+#line 18 "flexMicro.l"
+{return ASIGNACION;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 24 "flexSolo.l"
-printf( "Un punto y coma: %s\n", yytext);
+#line 19 "flexMicro.l"
+{return PYCOMA;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "flexSolo.l"
-printf( "Una coma: %s\n", yytext);
+#line 20 "flexMicro.l"
+{return COMA;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 26 "flexSolo.l"
-printf( "Un parentesis izquierdo: %s\n", yytext);
+#line 21 "flexMicro.l"
+{return PARENIZQUIERDO;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 27 "flexSolo.l"
-printf( "Un parentesis derecho: %s\n", yytext);
+#line 22 "flexMicro.l"
+{return PARENDERECHO;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "flexSolo.l"
-printf( "Un operador de suma: %s\n", yytext);
+#line 23 "flexMicro.l"
+{return SUMA;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 29 "flexSolo.l"
-printf( "Un operador de resta: %s\n", yytext);
+#line 24 "flexMicro.l"
+{return RESTA;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 31 "flexSolo.l"
-{atoi(yytext); printf( "Una constante de valor: %s\n", yytext);}
+#line 26 "flexMicro.l"
+{yylval.num=atoi(yytext); return CONSTANTE;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 33 "flexSolo.l"
-printf( "Palabra Clave inicio: %s\n", yytext);
+#line 28 "flexMicro.l"
+{return INICIO;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 34 "flexSolo.l"
-printf( "Palabra Clave fin: %s\n", yytext);
+#line 29 "flexMicro.l"
+{return FIN;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 35 "flexSolo.l"
-printf( "Palabra Clave leer: %s\n", yytext);
+#line 30 "flexMicro.l"
+{return LEER;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 36 "flexSolo.l"
-printf( "Palabra Clave escribir: %s\n", yytext);
+#line 31 "flexMicro.l"
+{return ESCRIBIR;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 38 "flexSolo.l"
-printf( "Un operador de identificador: %s de longitud %d\n", yytext, yyleng );
+#line 33 "flexMicro.l"
+{return ID;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 40 "flexSolo.l"
+#line 35 "flexMicro.l"
 
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 36 "flexMicro.l"
+{return 0; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 42 "flexSolo.l"
+#line 37 "flexMicro.l"
+{ printf("Caracter No Reconocido: %s terminando... \n", yytext); exit(1);}
+	YY_BREAK
+case 16:
+YY_RULE_SETUP
+#line 39 "flexMicro.l"
 ECHO;
 	YY_BREAK
-#line 731 "lex.yy.c"
-case YY_STATE_EOF(INITIAL):
-	yyterminate();
+#line 715 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1019,7 +1001,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 76 )
+			if ( yy_current_state >= 41 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1054,11 +1036,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 76 )
+		if ( yy_current_state >= 41 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 75);
+	yy_is_jam = (yy_current_state == 40);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1613,33 +1595,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 42 "flexSolo.l"
-
-
-int main(int argc, char **argv) {
-
-if (argc < 2) {
-printf("Falta el nombre del archivo a analizar. Debe escribir el comando asi: ./%s <archivo_con_codigo_en_micro>\n", argv[0]);
-return 1;
-}
-FILE *archivo = fopen(argv[1], "r"); 
-if (!archivo) {
-printf("Error al abrir el archivo");
-return 1;
-}
-yyin = archivo;
-
-printf("Bienvenido al analizador lexico de codigo Micro!\n");
-while (!yywrap) {
-yylex();
-}
-printf("Felicidades! Tu codigo Micro no tiene errores lexicos!\n");
-
-
-fclose(archivo);
-return 0;
-}
-
-void yyerror (char *s){
-printf ("Ha ocurrido un error: %s\n",s);
-}
+#line 39 "flexMicro.l"

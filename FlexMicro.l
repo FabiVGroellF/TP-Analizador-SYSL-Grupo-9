@@ -32,4 +32,8 @@ ESCRIBIR			"escribir"
 
 {IDENTIFICADOR}		{return ID;}
 
+[ \t\n]
+<<EOF>>             {return 0; }
+.                   { printf("Caracter No Reconocido: %s terminando... \n", yytext); exit(1);}
+
 %%

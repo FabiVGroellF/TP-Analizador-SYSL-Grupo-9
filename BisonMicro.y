@@ -11,6 +11,8 @@ extern FILE *yyin;
 FILE *archivo;
 int variable=0;
 
+#define YYDEBUG 1
+
 %}
 
 %union{
@@ -23,11 +25,14 @@ int variable=0;
 %token <num> CONSTANTE
 %%
 
+programa: INICIO listaSentencias FIN { printf("Programa completo.\n"); }
+;
+
 listaSentencias: listaSentencias sentencia 
 |sentencia
 ;
 
-sentencia: ID {if(yyleng>32) yyerror("tu identificador tiene mas de 32 caracteres");} ASIGNACION expresion PYCOMA {printf("Se hizo la asignacion");}
+sentencia: ID {if(yyleng>32) yyerror("tu identificador tiene mas de 32 caracteres");} ASIGNACION expresion PYCOMA {printf("Se hizo la asignacion \n");}
 |LEER PARENIZQUIERDO listaIdentificadores PARENDERECHO PYCOMA
 |ESCRIBIR PARENIZQUIERDO listaExpresiones PARENDERECHO PYCOMA
 ;
@@ -55,6 +60,7 @@ operadorAditivo: SUMA
 %%
 
 int main(int argc, char **argv) {
+extern int yydebug;
 if (argc < 2) {
 printf("Falta el nombre del archivo a analizar. Debe escribir el comando asi: ./analizador <archivo_con_codigo_en_micro>\n");
 return 1;
