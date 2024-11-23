@@ -1,4 +1,6 @@
 inicio
 a := 5;
 b:=3;
+leer(a,b);
+escribir(a,b);
 fin
