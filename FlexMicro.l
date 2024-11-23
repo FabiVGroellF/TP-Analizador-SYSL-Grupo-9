@@ -8,8 +8,8 @@ DIGITO 				[0-9]
 LETRA				[a-zA-Z]
 IDENTIFICADOR		{LETRA}({LETRA}|{DIGITO})*
 constEntera			{DIGITO}({DIGITO})* 
-INICIO				"INICIO"
-FIN 				"FIN"
+INICIO				"inicio"
+FIN 				"fin"
 LEER				"leer"
 ESCRIBIR			"escribir"
 
