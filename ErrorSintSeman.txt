@@ -1,5 +1,5 @@
 inicio
-	ahsdjhsakjhdasklhdkjashdjkslahdjklashdjkslahdlkjas := 0;
+	variableAbsurdamenteExtensaSinMotivo := 0;
 	leer (a,b);
 	cc := a + (b-2);
 	escribir (d, a+4)
