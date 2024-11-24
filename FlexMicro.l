@@ -5,7 +5,6 @@
 	#include "y.tab.h"
 	
 	extern int flag_de_error;
-	extern int check_id(const char* id);
 %}
 
 DIGITO 				[0-9]
