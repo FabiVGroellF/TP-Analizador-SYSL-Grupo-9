@@ -1,10 +1,11 @@
 %{
 	#include <stdio.h>
 	#include <stdlib.h>
+	#include <string.h>
 	#include "y.tab.h"
 	
 	extern int flag_de_error;
-	
+	extern int check_id(const char* id);
 %}
 
 DIGITO 				[0-9]
@@ -33,10 +34,10 @@ ESCRIBIR			"escribir"
 {LEER} 				{return LEER;}
 {ESCRIBIR} 			{return ESCRIBIR;}
 
-{IDENTIFICADOR}		{return ID;}
+{IDENTIFICADOR}		{yylval.cadena = strdup(yytext); return ID;}
 
 [ \t\n]
-<<EOF>>             {return 0; }
+<<EOF>>             {return 0;}
 .                   { printf("Caracter No Reconocido: %s \n", yytext); flag_de_error = 1;}
 
 %%
