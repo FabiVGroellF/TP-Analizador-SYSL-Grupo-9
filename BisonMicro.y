@@ -91,7 +91,6 @@ operadorAditivo: SUMA
 %%
 
 int main(int argc, char **argv) {
-extern int yydebug;
 if (argc < 2) {
 printf("Falta el nombre del archivo a analizar. Debe escribir el comando asi: ./analizador <archivo_con_codigo_en_micro>\n");
 return 1;
