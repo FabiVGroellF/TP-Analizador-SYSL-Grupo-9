@@ -68,7 +68,7 @@
 /* Copy the first part of user declarations.  */
 
 /* Line 189 of yacc.c  */
-#line 1 "BisonMicro.y"
+#line 1 "bisonMicro.y"
 
 
 #include <stdio.h>
@@ -81,7 +81,6 @@ extern int yylex(void);
 extern void yyerror(char*);
 extern FILE *yyin;
 FILE *archivo;
-int variable=0;
 int flag_de_error = 0;
 int in_escribir = 0;
 
@@ -119,7 +118,7 @@ int check_id(const char* id) {
 
 
 /* Line 189 of yacc.c  */
-#line 123 "y.tab.c"
+#line 122 "y.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -184,7 +183,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 50 "BisonMicro.y"
+#line 49 "bisonMicro.y"
 
    char* cadena;
    int num;
@@ -192,7 +191,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 196 "y.tab.c"
+#line 195 "y.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -204,7 +203,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 208 "y.tab.c"
+#line 207 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -495,9 +494,9 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    60,    60,    63,    64,    67,    67,    68,    69,    69,
-      72,    73,    76,    77,    80,    81,    84,    85,    86,    89,
-      90
+       0,    59,    59,    62,    63,    66,    66,    67,    68,    68,
+      71,    72,    75,    76,    79,    80,    83,    84,    85,    88,
+      89
 };
 #endif
 
@@ -1418,42 +1417,42 @@ yyreduce:
         case 5:
 
 /* Line 1455 of yacc.c  */
-#line 67 "BisonMicro.y"
+#line 66 "bisonMicro.y"
     { add_id((yyvsp[(1) - (1)].cadena)); }
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 67 "BisonMicro.y"
+#line 66 "bisonMicro.y"
     { printf("Asignacion correcta!\n"); }
     break;
 
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 69 "BisonMicro.y"
+#line 68 "bisonMicro.y"
     { in_escribir = 1;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 69 "BisonMicro.y"
+#line 68 "bisonMicro.y"
     { in_escribir = 0; }
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 84 "BisonMicro.y"
+#line 83 "bisonMicro.y"
     { if (in_escribir && check_id(yytext) == 0) { yyerror("La variable no ha sido inicializada!\n"); } add_id((yyvsp[(1) - (1)].cadena));}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1457 "y.tab.c"
+#line 1456 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1665,7 +1664,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 92 "BisonMicro.y"
+#line 91 "bisonMicro.y"
 
 
 int main(int argc, char **argv) {

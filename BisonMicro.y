@@ -10,7 +10,6 @@ extern int yylex(void);
 extern void yyerror(char*);
 extern FILE *yyin;
 FILE *archivo;
-int variable=0;
 int flag_de_error = 0;
 int in_escribir = 0;
 

@@ -382,17 +382,16 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "FlexMicro.l"
+#line 1 "flexMicro.l"
 #define INITIAL 0
-#line 2 "FlexMicro.l"
+#line 2 "flexMicro.l"
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include <string.h>
 	#include "y.tab.h"
 	
 	extern int flag_de_error;
-	extern int check_id(const char* id);
-#line 396 "lex.yy.c"
+#line 395 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -543,10 +542,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 20 "FlexMicro.l"
+#line 19 "flexMicro.l"
 
 
-#line 550 "lex.yy.c"
+#line 549 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -631,89 +630,89 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 22 "FlexMicro.l"
+#line 21 "flexMicro.l"
 {return ASIGNACION;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 23 "FlexMicro.l"
+#line 22 "flexMicro.l"
 {return PYCOMA;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 24 "FlexMicro.l"
+#line 23 "flexMicro.l"
 {return COMA;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 25 "FlexMicro.l"
+#line 24 "flexMicro.l"
 {return PARENIZQUIERDO;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 26 "FlexMicro.l"
+#line 25 "flexMicro.l"
 {return PARENDERECHO;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 27 "FlexMicro.l"
+#line 26 "flexMicro.l"
 {return SUMA;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 28 "FlexMicro.l"
+#line 27 "flexMicro.l"
 {return RESTA;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 30 "FlexMicro.l"
+#line 29 "flexMicro.l"
 {yylval.num=atoi(yytext); return CONSTANTE;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 32 "FlexMicro.l"
+#line 31 "flexMicro.l"
 {return INICIO;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 33 "FlexMicro.l"
+#line 32 "flexMicro.l"
 {return FIN;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 34 "FlexMicro.l"
+#line 33 "flexMicro.l"
 {return LEER;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 35 "FlexMicro.l"
+#line 34 "flexMicro.l"
 {return ESCRIBIR;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 37 "FlexMicro.l"
+#line 36 "flexMicro.l"
 {yylval.cadena = strdup(yytext); return ID;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 39 "FlexMicro.l"
+#line 38 "flexMicro.l"
 
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 40 "FlexMicro.l"
+#line 39 "flexMicro.l"
 {return 0;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 41 "FlexMicro.l"
+#line 40 "flexMicro.l"
 {printf("Error Lexico: no se reconocio a ' %s ' \n", yytext); flag_de_error = 1;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 43 "FlexMicro.l"
+#line 42 "flexMicro.l"
 ECHO;
 	YY_BREAK
-#line 717 "lex.yy.c"
+#line 716 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1597,4 +1596,4 @@ int main()
 	return 0;
 	}
 #endif
-#line 43 "FlexMicro.l"
+#line 42 "flexMicro.l"
