@@ -1,5 +1,6 @@
 inicio
 	leer (a,b);
-	leer := a + (b-2);
+	ola := a + (b-2);
 	escribir (cc, a+4);
+	#
 fin
