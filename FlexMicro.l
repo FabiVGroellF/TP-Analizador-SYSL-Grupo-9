@@ -38,6 +38,6 @@ ESCRIBIR			"escribir"
 
 [ \t\n]
 <<EOF>>             {return 0;}
-.                   { printf("Caracter No Reconocido: %s \n", yytext); flag_de_error = 1;}
+.                   {printf("Error Lexico: no se reconocio a ' %s ' \n", yytext); flag_de_error = 1;}
 
 %%

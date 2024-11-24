@@ -13,12 +13,16 @@ FILE *archivo;
 int variable=0;
 int flag_de_error = 0;
 int in_escribir = 0;
-#define YYDEBUG 1
 
 char* ids[100];
 int id_count = 0;
 
 void add_id(const char* id) {
+	if (strlen(id) > 32) {
+		yyerror("El identificador tiene mas de 32 caracteres");
+		flag_de_error = 1;
+	}
+
 	for (int i = 0; i < id_count; ++i) {
 		if (strcmp(ids[i], id) == 0) {
 			return;
@@ -27,7 +31,7 @@ void add_id(const char* id) {
 	if (id_count < 100) {
 		ids[id_count++] = strdup(id);
 	} else { 
-		printf("Error, tu codigo tiene mas de 100 identificadores!");
+		yyerror("El codigo ya tiene mas de 100 identificadores!");
 		flag_de_error = 1;
 		} 
 	}
@@ -60,7 +64,7 @@ listaSentencias: listaSentencias sentencia
 |sentencia
 ;
 
-sentencia: ID {if(yyleng>32) yyerror("tu identificador tiene mas de 32 caracteres"); add_id($1);} ASIGNACION expresion PYCOMA {printf("Asignacion correcta! \n");}
+sentencia: ID { add_id($1); } ASIGNACION expresion PYCOMA { printf("Asignacion correcta!\n"); }
 |LEER PARENIZQUIERDO listaIdentificadores PARENDERECHO PYCOMA
 |ESCRIBIR { in_escribir = 1;} PARENIZQUIERDO listaExpresiones PARENDERECHO PYCOMA { in_escribir = 0; }
 ;
@@ -77,7 +81,7 @@ expresion: primaria
 |expresion operadorAditivo primaria 
 ; 
 
-primaria: ID {if (in_escribir && check_id(yytext) == 0) { printf("Warning: La variable '%s' no ha sido inicializada!\n", yytext);}add_id($1); }
+primaria: ID { if (in_escribir && check_id(yytext) == 0) { yyerror("La variable no ha sido inicializada!\n"); } add_id($1);}
 |CONSTANTE
 |PARENIZQUIERDO expresion PARENDERECHO
 ;
@@ -114,7 +118,12 @@ return 0;
 }
 
 void yyerror (char *s){
-printf ("Ha ocurrido un error: %s, inesperado %s",s,yytext);
+	if (s == "syntax error") {
+		printf ("Error Sintactico: no se espera que aparezca '%s'\n",yytext);
+	}
+	else {
+		printf ("Error Semantico con %s: %s\n",yytext, s);
+	}
 }
 
 int yywrap()  {
